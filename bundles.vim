@@ -49,6 +49,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'dyng/ctrlsf.vim'
 
 "-------------
 " Other Utils
