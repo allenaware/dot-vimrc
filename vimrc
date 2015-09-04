@@ -266,3 +266,6 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
+set noimd 
+set imi=2 
+set ims=2 
