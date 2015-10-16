@@ -1,5 +1,5 @@
 source ~/.vim/bundles.vim
-
+" let mapleader=\"
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
@@ -12,9 +12,10 @@ syntax on
 "--------
 " Vim UI
 "--------
-" color scheme
-set background=dark
-color solarized
+colorscheme Tomorrow-Night 
+" colorscheme vividchalk 
+"set background dark 
+"color solarized 
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -53,8 +54,8 @@ set smartindent     " indent when
 set tabstop=4       " tab width
 set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
-" set textwidth=79
-" set smarttab
+set textwidth=79
+set smarttab
 set expandtab       " expand tab to space
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -76,26 +77,26 @@ let g:html_indent_style1 = "inc"
 " Plugin settings
 "-----------------
 " Rainbow parentheses for Lisp and variants
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-let g:rbpt_max = 16
-autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
+" let g:rbpt_colorpairs = [
+    " \ ['brown',       'RoyalBlue3'],
+    " \ ['Darkblue',    'SeaGreen3'],
+    " \ ['darkgray',    'DarkOrchid3'],
+    " \ ['darkgreen',   'firebrick3'],
+    " \ ['darkcyan',    'RoyalBlue3'],
+    " \ ['darkred',     'SeaGreen3'],
+    " \ ['darkmagenta', 'DarkOrchid3'],
+    " \ ['brown',       'firebrick3'],
+    " \ ['gray',        'RoyalBlue3'],
+    " \ ['black',       'SeaGreen3'],
+    " \ ['darkmagenta', 'DarkOrchid3'],
+    " \ ['Darkblue',    'firebrick3'],
+    " \ ['darkgreen',   'RoyalBlue3'],
+    " \ ['darkcyan',    'SeaGreen3'],
+    " \ ['darkred',     'DarkOrchid3'],
+    " \ ['red',         'firebrick3'],
+    " \ ]
+" let g:rbpt_max = 16
+" autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
 " tabbar
 let g:Tb_MaxSize = 2
@@ -141,7 +142,7 @@ if executable('coffeetags')
 endif
 
 " Nerd Tree
-let NERDChristmasTree=0
+let NERDChristmasTree=1
 let NERDTreeWinSize=30
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
@@ -151,7 +152,7 @@ let NERDTreeWinPos = "right"
 
 " nerdcommenter
 let NERDSpaceDelims=1
-" nmap <D-/> :NERDComToggleComment<cr>
+nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
 
 " ZenCoding
@@ -202,8 +203,9 @@ nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nmap  <D-/> :
-nnoremap <leader>a :Ack
+"nmap  <D-/> :
+"nnoremap <leader>a :Ack
+nnoremap <leader>a :CtrlSF 
 nnoremap <leader>v V`]
 
 "------------------
@@ -251,8 +253,8 @@ if has("gui_running")
     "set transparency=30
     set guifont=Monaco:h13
     set showtabline=2
-    set columns=140
-    set lines=40
+    set columns=999
+    set lines=999 
     noremap <D-M-Left> :tabprevious<cr>
     noremap <D-M-Right> :tabnext<cr>
     map <D-1> 1gt
@@ -265,7 +267,33 @@ if has("gui_running")
     map <D-8> 8gt
     map <D-9> 9gt
     map <D-0> :tablast<CR>
+    set fu
+    set noimd 
+    set imi=2 
+    set ims=2 
 endif
-set noimd 
-set imi=2 
-set ims=2 
+let g:rainbow_active = 0
+nnoremap <leader>r :RainbowToggle<CR> 
+let g:rainbow_operators=2
+" let g:rainbow_conf = {
+       " 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+       " 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+       " 'operators': '_,_',
+       " 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    " \   'separately': {
+    " \       '*': {},
+    " \       'tex': {
+    " \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+    " \       },
+    " \       'lisp': {
+    " \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+    " \       },
+    " \       'vim': {
+    " \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    " \       },
+    " \       'html': {
+    " \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+    " \       },
+    " \       'css': 0,
+    " \   }
+    " }

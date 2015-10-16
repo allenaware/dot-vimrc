@@ -36,6 +36,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'sjl/gundo.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'terryma/vim-multiple-cursors'
 
 "--------------
 " IDE features
@@ -50,6 +51,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'dyng/ctrlsf.vim'
+Bundle 'oplatek/Conque-Shell'
+Bundle 'luochen1990/rainbow'
 
 "-------------
 " Other Utils
@@ -87,7 +90,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'fatih/vim-go'
 
 "------- FPs ------
-Bundle 'kien/rainbow_parentheses.vim'
+" Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'wlangstroth/vim-racket'
 " Bundle 'vim-scripts/VimClojure'
 " Bundle 'rosstimson/scala-vim-support'
