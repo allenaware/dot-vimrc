@@ -252,7 +252,7 @@ if has("gui_running")
     set go=aAce  " remove toolbar
     "set transparency=30
     set guifont=Monaco:h13
-    set showtabline=2
+    set showtabline=1
     set columns=999
     set lines=999 
     noremap <D-M-Left> :tabprevious<cr>
